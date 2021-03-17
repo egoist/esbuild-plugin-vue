@@ -1,9 +1,22 @@
-# ts-lib-starter
+# esbuild-plugin-vue
+
+Basic `.vue` support for esbuild.
 
 ## Install
 
 ```bash
-npm i my-ts-lib
+npm i esbuild-plugin-vue @vue/compiler-sfc
+```
+
+## Usage
+
+```ts
+import { build } from 'esbuild'
+import vue from 'esbuild-plugin-vue'
+
+build({
+  plugins: [vue()],
+})
 ```
 
 ## License
