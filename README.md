@@ -1,4 +1,10 @@
+**💛 You can help the author become a full-time open-source maintainer by [sponsoring him on GitHub](https://github.com/sponsors/egoist).**
+
+---
+
 # esbuild-plugin-vue
+
+[![npm version](https://badgen.net/npm/v/esbuild-plugin-vue)](https://npm.im/esbuild-plugin-vue)
 
 Basic `.vue` support for esbuild.
 
