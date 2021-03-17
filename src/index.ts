@@ -53,6 +53,7 @@ export default (): Plugin => {
         if (sfc.descriptor.template) {
           contents += `
           import { render } from "${filepath}?vue&type=template"
+          export * from "${filepath}?vue&type=template"
           $$Component.render = render
           `
         }
