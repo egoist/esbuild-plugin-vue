@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-vue",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Basic .vue support for esbuild",
   "publishConfig": {
     "access": "public"
