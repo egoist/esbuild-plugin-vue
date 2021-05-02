@@ -13,8 +13,26 @@ export default (): Plugin => {
     name: 'vue',
 
     setup(build) {
+      const absPath = path.resolve(
+        process.cwd(),
+        build.initialOptions.absWorkingDir || '',
+      )
+
+      const formatPath = (p: string, resolveDir: string) => {
+        if (p.startsWith('.')) {
+          return path.resolve(resolveDir, p)
+        }
+        if (p.startsWith(absPath + '/')) {
+          return p
+        }
+        return path.join(absPath, p)
+      }
+
       build.onResolve({ filter: /\.vue$/ }, (args) => {
-        return { path: args.path, namespace: 'vue' }
+        return {
+          path: formatPath(args.path, args.resolveDir),
+          namespace: 'vue',
+        }
       })
 
       build.onResolve({ filter: /\?vue&type=template/ }, (args) => {
