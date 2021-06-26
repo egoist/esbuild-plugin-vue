@@ -6,7 +6,7 @@ specifiers:
   '@types/hash-sum': ^1.0.0
   '@types/jest': ^26.0.20
   '@vue/compiler-sfc': ^3.0.7
-  esbuild: ^0.11.19
+  esbuild: ^0.12.9
   hash-sum: ^2.0.0
   jest: ^26.6.3
   prettier: ^2.2.1
@@ -24,7 +24,7 @@ devDependencies:
   '@types/hash-sum': 1.0.0
   '@types/jest': 26.0.20
   '@vue/compiler-sfc': 3.0.7_vue@3.0.7
-  esbuild: 0.11.19
+  esbuild: 0.12.9
   jest: 26.6.3
   prettier: 2.2.1
   stylus: 0.54.8
@@ -1490,8 +1490,8 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /esbuild/0.11.19:
-    resolution: {integrity: sha512-X2h8UThAwKLxmc1OChHVegIScphS/qU9cUB5vCEV2T0A024E8Ptpg9xssXXcs+j1uEgXrDJZuVRzx2JsmGzq7A==}
+  /esbuild/0.12.9:
+    resolution: {integrity: sha512-MWRhAbMOJ9RJygCrt778rz/qNYgA4ZVj6aXnNPxFjs7PmIpb0fuB9Gmg5uWrr6n++XKwwm/RmSz6RR5JL2Ocsw==}
     hasBin: true
     requiresBuild: true
     dev: true
