@@ -248,6 +248,7 @@ export default (): Plugin => {
         const collectCssFile: (file: string) => void = build.collectCssFile
         if (result.metafile && collectCssFile) {
           for (const filename in result.metafile.outputs) {
+            if (!filename.endsWith('.css')) continue
             const inputs = Object.keys(result.metafile.outputs[filename].inputs)
             if (inputs.some((name) => name.includes('?vue&type=style'))) {
               collectCssFile(
