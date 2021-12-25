@@ -8,6 +8,12 @@
 
 Basic `.vue` support for esbuild.
 
+## Features
+
+- `<script setup>`
+- TypeScript support
+- Scoped style support
+
 ## Install
 
 ```bash

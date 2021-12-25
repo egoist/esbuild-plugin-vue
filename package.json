@@ -23,17 +23,17 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "^0.1.0",
-    "@sucrase/jest-plugin": "^2.0.0",
+    "@sucrase/jest-plugin": "^2.2.0",
     "@types/hash-sum": "^1.0.0",
-    "@types/jest": "^26.0.20",
-    "@vue/compiler-sfc": "^3.0.7",
-    "esbuild": "^0.12.9",
-    "jest": "^26.6.3",
+    "@types/jest": "^27.0.3",
+    "@vue/compiler-sfc": "^3.2.26",
+    "esbuild": "^0.14.8",
+    "jest": "^27.4.5",
     "prettier": "^2.2.1",
     "stylus": "^0.54.8",
-    "tsup": "^4.8.10",
+    "tsup": "^5.11.9",
     "typescript": "^4.2.3",
-    "vue": "^3.0.7"
+    "vue": "^3.2.26"
   },
   "dependencies": {
     "hash-sum": "^2.0.0"

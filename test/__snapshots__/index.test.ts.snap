@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple: test/fixture/dist/setup.css 1`] = `
+"/* vue:./test/fixtures/setup.vue?vue&type=style */
+div[data-v-0ba7de37] {
+  color: red;
+}
+div[data-v-0ba7de37] {
+  font-size: 1em;
+}
+"
+`;
+
+exports[`simple: test/fixture/dist/setup.js 1`] = `
+"// vue:./test/fixtures/setup.vue
+import { defineComponent as _defineComponent } from \\"vue\\";
+import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \\"vue\\";
+import { ref } from \\"vue\\";
+var _withScopeId = (n) => (_pushScopeId(\\"data-v-0ba7de37\\"), n = n(), _popScopeId(), n);
+var _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\\"h1\\", null, \\"hi\\", -1));
+var foo = \\"foo\\";
+var __sfc_main = /* @__PURE__ */ _defineComponent({
+  setup(__props) {
+    const start = 1;
+    const count = ref(start);
+    return (_ctx, _cache) => {
+      return _openBlock(), _createElementBlock(_Fragment, null, [
+        _createElementVNode(\\"div\\", null, _toDisplayString(count.value), 1),
+        _hoisted_1
+      ], 64);
+    };
+  }
+});
+__sfc_main.__scopeId = \\"data-v-0ba7de37\\";
+var setup_default = __sfc_main;
+export {
+  setup_default as default,
+  foo
+};
+"
+`;
+
+exports[`simple: test/fixture/dist/simple.css 1`] = `
+"/* vue:./test/fixtures/simple.vue?vue&type=style */
+div[data-v-525d9030] {
+  color: red;
+}
+div[data-v-525d9030] {
+  font-size: 1em;
+}
+"
+`;
+
+exports[`simple: test/fixture/dist/simple.js 1`] = `
+"// vue:./test/fixtures/simple.vue
+import { defineComponent, ref } from \\"vue\\";
+
+// vue:./test/fixtures/simple.vue?vue&type=template
+import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \\"vue\\";
+var _withScopeId = (n) => (_pushScopeId(\\"data-v-525d9030\\"), n = n(), _popScopeId(), n);
+var _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ _createElementVNode(\\"h1\\", null, \\"hi\\", -1));
+function render(_ctx, _cache) {
+  return _openBlock(), _createElementBlock(_Fragment, null, [
+    _createElementVNode(\\"div\\", null, _toDisplayString(_ctx.count), 1),
+    _hoisted_1
+  ], 64);
+}
+
+// vue:./test/fixtures/simple.vue
+var start = 1;
+var __sfc_main = defineComponent({
+  setup() {
+    return { count: ref(start) };
+  }
+});
+__sfc_main.render = render;
+__sfc_main.__scopeId = \\"data-v-525d9030\\";
+var simple_default = __sfc_main;
+export {
+  simple_default as default
+};
+"
+`;
+
+exports[`simple: test/fixture/dist/style-binding.css 1`] = `
+"/* vue:./test/fixtures/style-binding.vue?vue&type=style */
+button[data-v-dd710bba] {
+  color: var(--dd710bba-color);
+}
+"
+`;
+
+exports[`simple: test/fixture/dist/style-binding.js 1`] = `
+"// vue:./test/fixtures/style-binding.vue
+import { useCssVars as _useCssVars, unref as _unref, defineComponent as _defineComponent } from \\"vue\\";
+import { openBlock as _openBlock, createElementBlock as _createElementBlock } from \\"vue\\";
+var __sfc_main = /* @__PURE__ */ _defineComponent({
+  setup(__props) {
+    _useCssVars((_ctx) => ({
+      \\"dd710bba-color\\": _unref(color)
+    }));
+    let color = \\"red\\";
+    return (_ctx, _cache) => {
+      return _openBlock(), _createElementBlock(\\"button\\", null, \\"click me\\");
+    };
+  }
+});
+__sfc_main.__scopeId = \\"data-v-dd710bba\\";
+var style_binding_default = __sfc_main;
+export {
+  style_binding_default as default
+};
+"
+`;
