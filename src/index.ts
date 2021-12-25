@@ -1,13 +1,24 @@
 import fs from 'fs'
 import path from 'path'
 import { Plugin } from 'esbuild'
-import * as compiler from '@vue/compiler-sfc'
 import hash from 'hash-sum'
+import resolveFrom from 'resolve-from'
 import { CompilerOptions } from '@vue/compiler-sfc'
 
 const removeQuery = (p: string) => p.replace(/\?.+$/, '')
 
 const genId = (filepath: string) => hash(path.relative(process.cwd(), filepath))
+
+let compiler: typeof import('@vue/compiler-sfc') | undefined
+
+const getCompiler = async (
+  cwd: string,
+): Promise<Exclude<typeof compiler, undefined>> => {
+  if (compiler) return compiler
+  const id = resolveFrom(cwd, '@vue/compiler-sfc')
+  compiler = await import(id)
+  return compiler!
+}
 
 export default (): Plugin => {
   return {
@@ -71,6 +82,7 @@ export default (): Plugin => {
       })
 
       build.onLoad({ filter: /\.vue$/, namespace: 'vue' }, async (args) => {
+        const compiler = await getCompiler(absPath)
         const { resolveDir } = args.pluginData
         const filepath = formatPath(args.path, resolveDir)
         const content = await fs.promises.readFile(filepath, 'utf8')
@@ -129,6 +141,7 @@ export default (): Plugin => {
       build.onLoad(
         { filter: /\?vue&type=template/, namespace: 'vue' },
         async (args) => {
+          const compiler = await getCompiler(absPath)
           const { resolveDir } = args.pluginData
           const relativePath = removeQuery(args.path)
           const filepath = formatPath(relativePath, resolveDir)
@@ -173,6 +186,7 @@ export default (): Plugin => {
       build.onLoad(
         { filter: /\?vue&type=script/, namespace: 'vue' },
         async (args) => {
+          const compiler = await getCompiler(absPath)
           const { resolveDir } = args.pluginData
           const relativePath = removeQuery(args.path)
           const filepath = formatPath(relativePath, resolveDir)
@@ -195,6 +209,7 @@ export default (): Plugin => {
       build.onLoad(
         { filter: /\?vue&type=style/, namespace: 'vue' },
         async (args) => {
+          const compiler = await getCompiler(absPath)
           const { resolveDir } = args.pluginData
           const relativePath = removeQuery(args.path)
           const filepath = formatPath(relativePath, resolveDir)
