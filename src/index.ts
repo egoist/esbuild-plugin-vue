@@ -129,7 +129,7 @@ export default (): Plugin => {
           contents += `__sfc_main.__scopeId = "data-v-${genId(args.path)}"\n`
         }
 
-        contents += `export default __sfc_main`
+        contents += `\nexport default __sfc_main`
         return {
           contents,
           resolveDir,
