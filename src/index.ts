@@ -127,11 +127,9 @@ export default (): Plugin => {
 
         if (hasScoped) {
           contents += `__sfc_main.__scopeId = "data-v-${genId(args.path)}"\n`
-        } else {
-          contents += `\n`
         }
 
-        contents += `export default __sfc_main`
+        contents += `\nexport default __sfc_main`
         return {
           contents,
           resolveDir,
