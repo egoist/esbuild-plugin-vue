@@ -11,6 +11,7 @@ test('simple', async () => {
     entryPoints: [
       './test/fixtures/simple.vue',
       './test/fixtures/setup.vue',
+      './test/fixtures/setup-no-style.vue',
       './test/fixtures/style-binding.vue',
     ],
     plugins: [vue()],

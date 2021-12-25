@@ -40,6 +40,33 @@ export {
 "
 `;
 
+exports[`simple: test/fixture/dist/setup-no-style.js 1`] = `
+"// vue:./test/fixtures/setup-no-style.vue
+import { defineComponent as _defineComponent } from \\"vue\\";
+import { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock } from \\"vue\\";
+import { ref } from \\"vue\\";
+var _hoisted_1 = /* @__PURE__ */ _createElementVNode(\\"h1\\", null, \\"hi\\", -1);
+var foo = \\"foo\\";
+var __sfc_main = /* @__PURE__ */ _defineComponent({
+  setup(__props) {
+    const start = 1;
+    const count = ref(start);
+    return (_ctx, _cache) => {
+      return _openBlock(), _createElementBlock(_Fragment, null, [
+        _createElementVNode(\\"div\\", null, _toDisplayString(count.value), 1),
+        _hoisted_1
+      ], 64);
+    };
+  }
+});
+var setup_no_style_default = __sfc_main;
+export {
+  setup_no_style_default as default,
+  foo
+};
+"
+`;
+
 exports[`simple: test/fixture/dist/simple.css 1`] = `
 "/* vue:./test/fixtures/simple.vue?vue&type=style */
 div[data-v-525d9030] {
