@@ -16,7 +16,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts-resolve --external @vue/compiler-sfc",
+    "build": "tsup src/index.ts --target node16 --format cjs,esm --dts-resolve --external @vue/compiler-sfc",
     "test": "jest",
     "prepublishOnly": "npm run build"
   },
